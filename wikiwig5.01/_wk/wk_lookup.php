@@ -28,8 +28,8 @@
     <meta name="description" content="Wikiwig4 the powerfull wysiwyg wiki">
     <meta name="keywords" content="wikiwig,wysiwyg wiki,wiki,wikiwig4,wikiwig 4">
     <title>{head_title}   - wikiwig4</title>
-    <link rel="stylesheet" type="text/css" href="http://oreo/~steve/wiki_user2/_wk/wk_style.css" />
-    <script language="javascript" type="text/javascript" src="http://oreo/~steve/wiki_user2/_wk/wk_dyn_pages.php?js"></script>
+    <link rel="stylesheet" type="text/css" href="wk_style.css" />
+    <script language="javascript" type="text/javascript" src="wk_dyn_pages.php?js"></script>
   </head>
   <body>
     <br>
