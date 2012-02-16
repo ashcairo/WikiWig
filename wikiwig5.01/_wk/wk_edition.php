@@ -162,17 +162,17 @@ EOT;
       }
     } // checkEditionTime
 
-    // Variable permettant de savoir si on quitte la page car l'utilisateur a cliqué sur quitter
+    // Variable permettant de savoir si on quitte la page car l'utilisateur a cliquï¿© sur quitter
     var ask_to_quit = false;
-    // Variable stockant le contenu de l'éditeur entre les sauvegardes
-    // utilisée lorsqu'on quitte la page, pour savoir si le contenu a été sauvegardé
+    // Variable stockant le contenu de l'ï¿©diteur entre les sauvegardes
+    // utilisï¿©e lorsqu'on quitte la page, pour savoir si le contenu a ï¿©tï¿© sauvegardï¿©
     // Content of the page before editing (after loading though) so we can detect if editing changed the page (not always accurately)
     var editor_content = '';
 
     // Page Loading
     ////////////////
     window.onload = function () {
-      setBrowser(); // méthode basique de détection utilisée pour les méthodes hideLayer showLayer
+      setBrowser(); // mï¿©thode basique de dï¿©tection utilisï¿©e pour les mï¿©thodes hideLayer showLayer
       checkEditionTime(); // launches Countdown to warn the user
       editorLoading(); // launches the "waiting during loading" message
       if(editor_mode == 'full') { // Xinha mode
@@ -182,7 +182,7 @@ EOT;
       }
     } // window.onload ...
     /**
-     * Affiche un message tant que l'éditeur se charge
+     * Affiche un message tant que l'ï¿©diteur se charge
      */
     function editorLoading() {
       chaine = "<h2><?php echo  WK_EDITION_MESSAGE_LOADING; ?></h2><h5><?php echo  WK_EDITION_MESSAGE_CACHING; ?></h5><h3><?php echo  WK_EDITION_MESSAGE_PLEASE_WAIT; ?></h3>";
@@ -191,8 +191,8 @@ EOT;
     } // editorLoading
 
     /**
-     * Cache le message de chargement, une fois l'éditeur chargé
-     * cette méthode est appelé dans le script 'js/config_editeur.js' après que HTMLArea
+     * Cache le message de chargement, une fois l'ï¿©diteur chargï¿©
+     * cette mï¿©thode est appelï¿© dans le script 'js/config_editeur.js' aprï¿¨s que HTMLArea
      * ait fini son initialisation
      * Hide the editor is loading message once the editor has loaded.
      */
@@ -219,8 +219,8 @@ EOT;
       if(t != 0) {
         if(editor_mode == 'full') {
           // Ligne suivante necessaire pour un bon envoi du formulaire
-          // HTMLArea, à son chargement, redéfinit le gestionnaire d'évènements "onsubmit" du formulaire
-          // on doit exécuter cette méthode pour que HTMLArea copie le contenu de la zone éditeur
+          // HTMLArea, ï¿  son chargement, redï¿©finit le gestionnaire d'ï¿©vï¿¨nements "onsubmit" du formulaire
+          // on doit exï¿©cuter cette mï¿©thode pour que HTMLArea copie le contenu de la zone ï¿©diteur
           // dans la variable de formulaire correspondante
           document.forms['editeur'].onsubmit();
         } else if(editor_mode == 'light'){
@@ -308,7 +308,7 @@ EOT;
      */
     function unlocked(){
       unlock_in_progress = false;
-      // on rajoute à l'url une variable pour forcer le rechargement du navigateur
+      // on rajoute ï¿  l'url une variable pour forcer le rechargement du navigateur
       if (sessionExpired==true) {
         // no reload because we would like to keep the page displayed in order to let the guy check if if he will lose anything
       } else {
@@ -321,9 +321,9 @@ EOT;
      */
     window.onunload = function() {
       if(!ask_to_quit){
-        // l'utilisateur n'a pas cliqué sur quitter
-        // (la page est rechargée ou changée)
-        // on lance la méthode prévue pour quitter l'édition
+        // l'utilisateur n'a pas cliquï¿© sur quitter
+        // (la page est rechargï¿©e ou changï¿©e)
+        // on lance la mï¿©thode prï¿©vue pour quitter l'ï¿©dition
         quit();
       }
     } // onunload
@@ -405,7 +405,7 @@ EOT;
           } else {
             //initRTE('wysiwyg/conceptRTE/','wysiwyg/conceptRTE/images/', '', '<?php echo Wiki::getConfig('css_wiki'); ?>', '<?php echo Wiki::getConfig('lang'); ?>');
             initRTE('wysiwyg/rte/images/', 'wysiwyg/rte/', '<?php echo Wiki::getConfig('css_wiki'); ?>', '<?php echo Wiki::getConfig('lang'); ?>');
-            writeRichText('wikiwig', '<?php echo str_replace(array("'","\n","\r"),array("\\'","",""),$page_content); ?>' , '95%', '50%', true, false);
+            writeRichText('wikiwig', '<?php echo str_replace(array("'", "\r", "\n"),array("\\'", "\\r", "\\n"),$page_content); ?>' , '95%', '50%', true, false);
           }
         </script>
         <input name="page" type="hidden" value="<?php echo $page; ?>">
