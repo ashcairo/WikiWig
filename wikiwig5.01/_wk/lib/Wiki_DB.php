@@ -24,7 +24,7 @@
       switch($dbType){
         case 'mysql' :
           require_once dirname(__FILE__).'/database/DB_MySQL.php';
-          $ret =& new DB_MySQL($dbHost,$dbUser,$dbPass,$dbName);
+          $ret = new DB_MySQL($dbHost,$dbUser,$dbPass,$dbName);
           return $ret;
         default :
           return false;
