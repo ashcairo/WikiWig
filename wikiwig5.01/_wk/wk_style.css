@@ -9,17 +9,21 @@ Wikiwig main css for php pages.
 body {
 	margin:0px;
 	padding:0px;
-	font:11px/20px verdana, arial, helvetica, sans-serif;
+	font:11pt verdana, arial, helvetica, sans-serif;
 	color:#333;
 	background-color:white;
 }
+
 h1 {
 	margin:0px 0px 15px 0px;
 	padding:0px;
-	font-size:28px;
-	line-height:28px;
+	font-size:24pt;
 	font-weight:900;
 	color:#ccc;
+}
+
+h2 {
+	font-size:18pt;
 }
 
 h5 {
@@ -29,14 +33,12 @@ h5 {
 }
 
 p {
-	font:11px/20px verdana, arial, helvetica, sans-serif;
 	margin:0px 0px 16px 0px;
 	padding:0px;
 }
 
 a {
 	color:#09c;
-	font-size:11px;
 	text-decoration:none;
 	font-weight:600;
 	font-family:verdana, arial, helvetica, sans-serif;
