@@ -1,0 +1,242 @@
+5.0   May 2008 [fatcatair]
+
+  Many new features and improvements.
+
+  - Added history to wiki pages and the ability to restore from backups or the trash.
+
+  - Made internal links immune to breakage when target pages are moved (or containing folder moved).
+  - Implemented move page.
+  - Added possibility of creating a new page when selecting an internal wiki link
+    while editing.
+
+  - Added selectable use of http/https for login pages.
+
+  - Added customizable rights per user and guests.
+  - Made it possible to have multiple users to have admin authority.
+
+  - Made SMTP support an option rather than required.
+
+  - Made user approval selectable by either, email, admin action, or automatic.
+  - Added two different (optional) captcha's to the signup page.
+
+4.3b: February 2008 [fatcatair]
+
+  Corrected installation problems with Xinha. Extended File Manager should now
+  work properly for images and document files.
+
+  Updated localization files. English, french and german now have strings for all
+  the same wiki constants. There are undoubtably still some french strings embedded in
+  the code that may appear on some pages. If you see some please report it.
+
+  Corrected problems with the Insert-Internal-Wiki-Link code. It should now properly
+  show all the files in the top level directory and create proper links.
+
+  Fixed numerous php and Javascript errors. The error log for the web server (presumably apache)
+  should be much cleaner. The only error wikiwig generates that I'm aware of is:
+	sh: line 1: dir: command not found
+
+  Which is normal and harmless. It is part of the code for trying to detect safe mode.
+  The browser's error console should also be much cleaner. There are some messages that
+  come from Xinha code ( .css files) that are harmless and are the result of browser
+  incompatibilities.
+
+  Much reformatting of the code. I found the indentation style impossible to follow. My
+  suspicion is that a lot of the code was generate by a tool as it wasn't particularly
+  readable in a vanilla editor. More reformatting will come in the future.
+
+  Properly detects safe_mode on *nix systems.
+
+  Setup should now detect the language used in the browser/server and use that as the
+  default language if the language is supported (english, french or german). If the
+  language is unsupported then it defaults to french.
+
+============================
+
+4.3a: October 2007 [fatcatair]
+
+   Installed Xinha as a replacement for unsupported HTMLArea
+
+august 2006 Wikiwig 4.1.2 [starcrouz & Black Jesus & Guins]
+============================
+Bug Fixes
+---------
+-wikiwig seems not to work either with PHP >= V4.3 or MYSQL >= V5. The map doesn't work at all. Removing line 58 of _wk/lib/database/DB_MySQL.php fixed the problem. If somebody knows why ...
+
+june 2006 Wikiwig 4.1.1 [starcrouz & melie-melo & Black Jesus & Guins]
+============================
+Bug Fixes
+---------
+-secure wk_lang.php file
+
+march 2006 Wikiwig 4.1 [starcrouz & melie-melo]
+============================
+
+Changes
+-------
+new chat system
+
+01 feb 2006 Wikiwig 4.0 [starcrouz & melie-melo]
+============================
+
+Changes
+-------
+-Rights management system for the administrator only
+-2 new fonctions in the wysiwyg editor htmlArea : marquee and Anchor.
+-Reflexion on the admin. part the bond appears only if the admin 
+is already to identify, the figurine become yellow then and more blue.
+
+
+30 November 2005 Wikiwig 4.0 [starcrouz & melie-melo]
+============================
+Bug Fixes
+---------
+-CSS compatible IE/MOZILLA
+
+Changes
+-------
+- You'll be able to alert every people who have asked to monitor a specific
+ page we you change something important in this page. Then, no need to send 
+ mails by yourself, wikiwig take care of it and without communicating any 
+ email adress to each other. 
+- the file path (on the top right of all wiki pages) display now no
+more than 2 levels depth (display space issue)
+- No more usage of the system-self-created pseudo ( ex:"glabouno")
+because a real user account has been built.
+
+25 May 2005 Wikiwig 3.2.0 [starcrouz & psypol]
+============================
+Bug Fixes
+---------
+ - #1143651 : HTML Area : can't addlink to subdirs with the "miniexplorer"
+- Useless alert popup (save or abort) when lock expires
+- Logo hidding the menu 
+- Loick never expires if the editor don't click on : quit on the "lock expired !" popup
+
+Changes
+-------
+- new logo
+- new icons in the menu
+
+?? ?? 2005 Wikiwig 3.2pre 3 [starcrouz & psypol]
+==============================
+
+Changes
+-------
+ - session path configuration variable added. Allow to define the PHP sessions path. Useful on a few
+    web hosting providers environment.
+ - HTTP headers for Location with full path (relative path could fail on some client configurations)
+ - portability : short_open_tags cleaned
+ 
+Bug Fixes
+----------
+ - correct configuration variable for the image manager plugin. ["base_url" variable]
+ - I18N : message warning on delete all pages of a folder on the list page corrected.
+ - Bug #1103431 : php_uname desactivated in some PHP env.
+ - #1105140 : permissions on folder and files creation modified
+ 
+10 Jan 2004 Wikiwig 3.2pre 2 [starcrouz & nomadeous]
+============================
+Bug Fixes
+---------
+ - #1098457 : error in createDir method (/lib/Wiki.php) : bad permissions affected for mkdir function
+Changes
+-------
+ - Allow to hide Directories from Wikiwig listing (and avoid users to create directories with same names)
+ - Set required identification in configuration page
+ - added more error control in createDir method (class /lib/Wiki.php)
+ - missing constants WK_CONF_ERR_DIR_CREATE in setup language definitions files
+
+05 Jan 2004 Wikiwig 3.2pre update [starcrouz & nomadeous]
+=================================
+Enhancements
+------------
+- In the map page of a folder, the index page and the pages locked by edition can't anymore be deleted
+
+Bug fixes
+---------
+ - folder creation error: "headers already sent"
+ - "chemin de fer" : path to pages corrected in the select menu
+
+
+23 Dec 2004 Wikiwig 3.2pre [starcrouz & nomadeous]
+==========================
+Conception fully reviewed to use PHP objects.
+
+Enhancements
+------------
+- internationalisation (english and french versions)
+- installation script greatly improved ( much more options, automatic creation of database tables, 
+  paths automatically detected, safe_mode detected, ...)
+- Pages now independant from folders (striped hard-coded paths)
+- database abstraction
+- classes
+
+TODO
+----
+- write documentation in different languages
+- add more languages (REQUEST for translaters !!!!!)
+- Fix bugs
+- allow usage of more RDBMS than MySQL
+- allow moving pages
+
+
+02 Nov 2004 Wikiwig 3.1.1 [starcrouz & nomadeous]
+=========================
+- create this file (changelog.txt)
+
+Bug fixes
+---------
+- blind link in administration installation script [corrected by Luc Millet]
+- file parsing reviewed (to create menus,...).
+
+
+30 Sep 2004 Wikiwig 3.1 [starcrouz & nomadeous]
+=======================
+Enhancements
+------------
+- too old browsers detection and displays basic editor.
+- edition in the same page (no more edition popup).
+- reloading after quit and save in edition of pages 
+- new template, "directory" added (with links to chat messengers)
+- User profile management improved (cookie saved, choosing a color, ...)
+- adminstration interface improved (installation)
+- installation script (not yet finished)
+
+Bug fixes
+---------
+- "chemin de fer" corrigé
+- correction du parsing des fichiers (pour créer les menus, ....).
+
+
+22 Sep 2004 Wikiwig 3.0.1 [starcrouz & angy]
+=========================
+Enhancements
+------------
+- works now on servers with the option "magic_quotes_gpc" ON
+
+
+29 Aou 2004 Wikiwig 3.0 [starcrouz & angy]
+=======================
+release of stable version
+most of bugs fixes
+
+
+28 Juil 2004 Wikiwig 3 béta [starcrouz & angy]
+===========================
+Full redevelopment with same concepts.
+- integration of htmlarea, (open source web wysiwyg editor)
+Hosting by sourceforge.net : http://sourceforge.net/projects/wikiwig
+
+
+Dec 2003 Wikiwig 2 [walk & starcrouz]
+==================
+http://wikistes.levillage.org/wikiwyg/
+- locking files (avoid more than person editing a page simultaneously)
+- automatic recording
+- to complete...
+
+
+Sep 2003 Wikiwig 1 [walk]
+==================
+http://webgeneraction.levillage.org/article.php3?id_article=265
+- features to detail

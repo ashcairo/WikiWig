@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+# script to convert accented characters to html escapes.
+#
+use HTML::Entities;
+@input = <>;
+foreach $line (@input) {
+    chomp($line);
+    print encode_entities($line), "\n"
+}

@@ -1,0 +1,135 @@
+<?php
+/*
+	Wikiwig Configuration File
+	written on Tue,  3 May 2005 14:01:46 +0200
+*/
+
+// Set the version
+
+$WK['wikiwig_version'] = '3.2.0';
+
+$WK['wikiwig_project_url'] = 'http://yourdomain.com/wikiwig/';
+
+
+
+// Safe_mode detected (change this if detection failed to find your current php config) 
+
+$WK['safe_mode'] = false;
+
+
+
+$WK['systemDir'] = '_wk';
+
+// Dynamic Detection of the system path of wikiwig
+
+$current_path = str_replace("\\","/",__FILE__);
+
+$WK['wkPath'] = substr($current_path,0,strpos($current_path,$WK['systemDir'].'/'));
+
+
+
+// HTTP path of wikiwig
+
+$WK['wkHTTPPath'] = 'http://127.0.0.1/wikiwig/';
+
+$WK['templatesDir'] = $WK['systemDir'].'/template';
+
+$WK['templatesSystemDir'] = $WK['templatesDir'].'/system';
+
+
+
+// Configuration Options
+
+
+$WK['wkName'] = "Wikiwig";
+$WK['wkDescription'] = "My Wikiwig";
+$WK['lang'] = "fr";
+$WK['userCookieTime'] = 31536000;
+$WK['nbBackups'] = 10;
+$WK['css_wiki'] = "wk_style.css";
+$WK['adminLogin'] = "admin";
+$WK['adminPass'] = "";
+$WK['dbType'] = "mysql";
+$WK['dbHost'] = "localhost";
+$WK['dbUser'] = "root";
+$WK['dbPass'] = "";
+$WK['dbName'] = "wikitest";
+$WK['dbPrefix'] = "wikiwig_";
+$WK['table_pages'] = $WK['dbPrefix'].'pages';
+$WK['table_utilisateurs'] = $WK['dbPrefix'].'utilisateurs';
+$WK['uploadDir'] = "_wk_upload";
+$WK['trashDir'] = "_wk_trash";
+$WK['backupDir'] = "_wk_backup";
+$WK['hiddenDirs'] = array('CVS','');
+$WK['sessionPath'] = "";
+$WK['defaultRights']['renameFolders'] = true;
+$WK['defaultRights']['renameFiles'] = true;
+$WK['defaultRights']['moveFolders'] = true;
+$WK['defaultRights']['moveFiles'] = true;
+$WK['defaultRights']['deleteFolders'] = true;
+$WK['defaultRights']['deleteFiles'] = true;
+$WK['editionMaxTime'] = 600;
+$WK['editionWarningTime'] = 120;
+$WK['filemanager_allow_extensions'] = "html;doc;xls;txt;gif;jpeg;jpg;png;pdf;zip;ppt";
+$WK['filemanager_delete_file'] = true;
+$WK['filemanager_allow_upload_file'] = true;
+$WK['filemanager_max_file_size'] = 104857600;
+$WK['filemanager_allow_delete_folder'] = true;
+$WK['filemanager_allow_create_folder'] = true;
+$WK['filemanager_datetime_format'] = "d-m-y H:i";
+$WK['imagemanager_image_class'] = "GD";
+$WK['imagemanager_image_transform_lib_path'] = "C:/Program Files/ImageMagick-5.5.7-Q16/";
+$WK['imagemanager_allow_new_dir'] = true;
+$WK['imagemanager_allow_upload'] = true;
+$WK['imagemanager_tmp_prefix'] = ".editor_";
+$WK['imagemanager_validate_images'] = true;
+$WK['imagemanager_thumbnail_dir'] = "thumbs";
+$WK['imagemanager_thumbnail_prefix'] = "th_";
+$WK['imagemanager_default_thumbnail'] = "img/default.gif";
+$WK['imagemanager_thumbnail_width'] = 96;
+$WK['imagemanager_thumbnail_height'] = 96;
+
+//File Manager Plugin
+//Redundant variables to respect FM Plugin Configuration
+$MY_DOCUMENT_ROOT = $WK['wkPath'].$WK['uploadDir'];
+$MY_BASE_URL = $WK['wkHTTPPath'].$WK['uploadDir'];
+$MY_URL_TO_OPEN_FILE = $WK['wkHTTPPath'].$WK['uploadDir'];
+$MY_DENY_EXTENSIONS = array('php', 'php3', 'php4', 'phtml', 'shtml', 'cgi', 'pl');
+$MY_ALLOW_EXTENSIONS = array('html','doc','xls','txt','gif','jpeg','jpg','png','pdf','zip','ppt');
+$MY_LIST_EXTENSIONS = array('html','doc','xls','txt','gif','jpeg','jpg','png','pdf','zip','ppt');
+$MY_DELETE_FILE = true;
+$MY_ALLOW_UPLOAD_FILE = true;
+$MY_MAX_FILE_SIZE = 104857600;
+$MY_ALLOW_DELETE_FOLDER = true;
+$MY_ALLOW_CREATE_FOLDER = true;
+$MY_DATETIME_FORMAT = "d-m-y H:i";
+
+//Image Manager Plugin
+//Redundant variables to respect IM Plugin Configuration
+$IMConfig['base_dir'] = $WK['wkPath'].$WK['uploadDir'];
+$IMConfig['base_url'] = $WK['wkHTTPPath'].$WK['uploadDir'];
+$IMConfig['safe_mode'] = $WK['safe_mode'];
+define('IMAGE_CLASS', "GD");
+define('IMAGE_TRANSFORM_LIB_PATH', "C:/Program Files/ImageMagick-5.5.7-Q16/");
+$IMConfig['allow_new_dir'] = true;
+$IMConfig['allow_upload'] = true;
+$IMConfig['tmp_prefix'] = ".editor_";
+$IMConfig['validate_images'] = true;
+$IMConfig['thumbnail_dir'] = "thumbs";
+$IMConfig['thumbnail_prefix'] = "th_";
+$IMConfig['default_thumbnail'] = "img/default.gif";
+$IMConfig['thumbnail_width'] = 96;
+$IMConfig['thumbnail_height'] = 96;
+
+// PHP Versions compatibility script
+
+@include_once(dirname(__FILE__).'/compat.php');
+
+
+
+// Language definitions
+
+@include_once(dirname(__FILE__).'/wk_lang.php');
+
+
+?>

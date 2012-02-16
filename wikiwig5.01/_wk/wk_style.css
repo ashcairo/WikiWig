@@ -1,0 +1,472 @@
+/***************
+Wikiwig main css for php pages.
+
+ infos on Box model hack : http://tantek.com/CSS/Examples/boxmodelhack.html (by Tantek Celik, creator of box model hack)
+						   http://glish.com/css/hacks.asp
+****************/
+
+/************************** GLOBALS *****************************/
+body {
+	margin:0px;
+	padding:0px;
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	background-color:white;
+}
+h1 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:28px;
+	line-height:28px;
+	font-weight:900;
+	color:#ccc;
+}
+
+h5 {
+	font-weight: normal;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+p {
+	font:11px/20px verdana, arial, helvetica, sans-serif;
+	margin:0px 0px 16px 0px;
+	padding:0px;
+}
+
+a {
+	color:#09c;
+	font-size:11px;
+	text-decoration:none;
+	font-weight:600;
+	font-family:verdana, arial, helvetica, sans-serif;
+}
+a:link {color:#09c;}
+a:visited {color:#07a;}
+a:hover {
+	text-decoration: none;
+	background: url(images/animarrow2.gif);
+	background-repeat:repeat-x;
+	background-position: bottom left;
+	padding-bottom: 4px;
+	/*white-space: nowrap;*/
+	background-color:#eee;
+}
+
+pre { 
+	margin: 0px 1em; 
+	padding: 5px 1em; 
+	background-color: #000; 
+	border: 1px dotted #02d; 
+	border-left: 2px solid #04f;
+	}
+
+img {
+	border:none
+}
+.errors{
+	color: #ff0000;
+	font-weight: bold;
+}
+#err{
+	padding: 15px;
+	width: 50%;	
+}
+/***************************** HEADER *****************************/
+#entete, #header {
+	margin: 20px 0px 5px 0px;
+	padding:17px 0px 0px 20px;
+	/* For IE5/Win's benefit height = [correct height] + [top padding] + [top and bottom border widths] */
+	height:25px; /* the correct height */
+	border-style:solid;
+	border-color:black;
+	border-width:1px 0px; /* top and bottom borders: 1px; left and right borders: 0px */
+	line-height:11px;
+	background-color:#eee;
+	/* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity. 
+Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it. 
+IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style 
+declaration. The incorrect IE5/Win value is above, while the correct value is 
+below. See http://glish.com/css/hacks.asp for details. */
+/* Box Model Hack (http://glish.com/css/hacks.asp) */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	
+	}
+/* I've heard this called the "be nice to Opera 5" rule. Basically, it feeds correct 
+length values to user agents that exhibit the parsing error exploited above yet get 
+the CSS box model right and understand the CSS2 parent-child selector. ALWAYS include
+a "be nice to Opera 5" rule every time you use the Tantek Celik hack (above). */
+body>#entete {height:20px;}
+body>#header {height:20px;}
+
+#header a:hover {
+background:none;
+}
+
+#entete_menu {
+	position:absolute;
+	top:30px;
+}
+
+#adminlink {
+	position:absolute;
+	right:10px;
+	top:30px;
+}
+
+#railroad {
+	position:absolute;
+	right:10px;
+	top:30px;
+}
+
+#railroad select {
+	/*height:18px;*/
+	padding:0px;
+	margin:0px;
+	display:inline;
+	font-size:10px;
+}
+
+/**************************** CONTENT ******************************/
+#content {
+	float:right;
+	padding:5px;
+	margin:10px;
+	border:1px dashed #999;
+	width:62%;
+/* Box Model Hack (http://glish.com/css/hacks.asp) */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+}
+/* be nice to Opera */
+body>#content {width:62%;}
+#contenu, #content { margin:10px; }
+#contenu>p {margin:0px;}
+#content>p {margin:0px;}
+#contenu>p+p {text-indent:30px;}
+#content>p+p {text-indent:30px;}
+#content select {
+	height:17px;
+	}
+#content input {
+	height:23px;
+}
+	
+
+/** Content in Actions pages **/
+.actions { text-align:center; }
+.actions #content { margin : 50px auto 50px auto; text-align:justify; float:none;}
+.actions #content form { text-align:center; }
+
+/** tables **/
+#content table {
+	font-size:12px;
+	width:100%;
+}
+#datatable thead th {
+	text-align:left;
+	padding-left:10px;
+}
+#datatable tbody td {
+	padding:5px 10px 5px 10px;
+	border-bottom:2px solid #ddd;
+}
+.cel2 {
+	padding:5px 10px 5px 10px;
+	width: 15px;
+}
+.cel3 {
+	padding:0;
+	width: 10px;
+}
+.celWR{
+	width: 40px;
+}
+.ligne th{
+	border-bottom:2px solid #aaa;
+}
+.ligne a { font-size:14px; }
+.ligne a:hover { background:none; }
+.colSort {background:#efefef;}
+.celSort {background:#fafafa;}
+.index {background-color:#eeeefa;}
+.index td {}
+.index .celSort { background-color:#ddddf0; }
+.selected { background:#ddfafa; }
+.selected .celSort { background:#ddeaea; }
+
+/********************************** MENU *****************************/
+#menu {
+	float:left;
+	/*position:absolute;
+	top: 85px;
+	left:20px;*/
+	width:30%;
+	padding:5px;
+	margin:10px;
+	padding-left:10px;
+	background-color:#eee;
+	border:1px dashed #999;
+	line-height:17px;
+/* Again, the ugly brilliant hack. */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	
+	}
+/* Again, "be nice to Opera 5". */
+body>#menu {width:30%;}
+
+#menu li {
+	list-style:none;
+	margin-left:-30px;
+	padding:0px;
+}
+#menu li a {}
+#menu a img {border-bottom-width:0;}
+.dirsel {
+	background-color:#fff;
+	border:1px dashed #999;
+}
+.dirsel a {color:#00CCFF;}
+.dirsel a:hover  {background-color:#fff;}
+.dirsel input{ background-color:#fff;}
+
+#menu #wikiroot{
+	margin-left: 8px;
+	padding-left: 2px;
+}
+
+/********************************* TOOLSBARS *****************************/
+/** buttons bar **/
+.toolsbar {
+	margin:5px;
+	/*background:#fff;*/
+}
+.right {text-align : right;}
+.toolsbar button {
+	border: 1px solid #09c;
+	background:#fff;
+	font-size:10px;
+	padding:0;
+	margin:0;
+	height: 18px;
+	text-align: center;
+	line-height: 11px;
+}
+#menu .toolsbar {
+	margin:0px;
+}
+
+/********************************* FORMS *********************************/
+#formulaire{
+	border:3px solid #7A7A7A;
+	margin:20px;
+	/*padding-top:50px;*/
+}
+
+#popup {
+	position : absolute;
+	visibility:hidden;
+	background-color:#EEE;
+	padding:5px;
+	border:5px solid #09c;
+	top:250px;
+	left:200px;
+	width:400px;
+}
+#pseudoform {
+	margin:0px;
+	padding:0px;
+	vertical-align:middle;
+	height:20px;
+	display:inline;
+	position:relative;
+	top:-1px;
+}
+#pseudoform input#pseudo {
+	border:1px dashed #eee;
+	height:17px;
+	vertical-align:middle;
+	width:80px;
+	font-family: Arial, Helvetica, sans-serif;
+	color:#09c;
+	font-size:12px;
+}
+
+input:focus{
+	border-bottom:1px solid #09c;
+	background-color:#eee;
+}
+input.chps {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#09c;
+	border-width:0px;
+	border-bottom:1px solid #09c;
+	background-color:#eee;
+
+}
+input.btn {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#09c;
+	margin:5px;
+	border:1px solid #09c;
+	background-color:#eee;
+
+}
+input.button{
+  font-size: 11px;
+  height:17px;
+  width: 140px;
+  margin-bottom:20px;
+  margin-left:0px;
+  }/*part admin*/
+input, option{
+  font: 13px/20px verdana, arial, helvetica, sans-serif;
+ 	height: 20px;
+}  
+  
+input.check{
+	color:#09c;
+	padding:0;
+	margin:0;
+	height:15px;
+}
+
+
+
+/******************************** TOOLTIPS ******************************/
+#tipDiv {
+	position:absolute;
+	visibility:hidden;
+	z-index:100;
+}
+.tooltipTitle { 
+	font-family: verdana, tahoma, arial, sans-serif; 
+	font-size:8pt;
+	color: #09c; 
+	background-color: #eee; 
+	font-weight: bold;
+	border:1px solid #7D7C7C;
+	border-bottom:none;
+	width:140px;
+	
+}
+.tooltipText  { 
+	font-family: verdana, tahoma, arial, sans-serif; 
+	font-size:8pt;
+	color: #000000; 
+	background-color: #FFF;
+	border:1px solid #7D7C7C;
+	border-top:none;
+	width:140px;
+}
+
+/******************************** MISC ***********************************/
+#logo {
+	border:1px dashed #999;
+	background-color:#FFF;
+	position:absolute;
+	right:10px;
+	top:60px;
+	padding:5px;
+}
+#logo img {cursor:pointer;}
+
+.code { color: #f5deb3; }
+.string { color: #00ffff; }
+.comment { color: #8fbc8f; }
+.variable-name { color: #fa8072; }
+.type { color: #90ee90; font-weight: bold; }
+.reference { color: #ee82ee; }
+.preprocessor { color: #faf; }
+.keyword { color: #ffffff; font-weight: bold; }
+.function-name { color: #ace; }
+.html-tag { font-weight: bold; }
+.html-helper-italic { font-style: italic; }
+.warning { color: #ffa500; font-weight: bold; }
+.html-helper-bold { font-weight: bold; }
+
+/* info combo */
+
+.quote { font-style: italic; color: #ee9; }
+.highlight { background-color: yellow; color: #000; }
+.deprecated { text-decoration: line-through; color: #aaa; }
+
+
+/****************************** VOTE **************************************/
+#vote {
+	float :right;
+	clear:both;
+	width:150px;
+	height:90px;
+	padding:5px;
+	margin:10px;
+}
+
+/******************************** AUTH ********************************/
+#auth{
+	border:1px dashed #999999;
+	float:left;
+	padding:10px;
+	margin:10px;
+}
+.colorFont{
+	color:#888888;
+	font-size:14px;
+	font-weight:bold;	
+}
+
+
+#rouge{
+	color :red;	
+}
+
+.grey{
+	background-color :#DDDDDD;
+	border-top:1px solid #FFFFFF;
+}
+
+#imgLien:hover{
+	background-repeat:no-repeat;
+	background: none;
+	text-decoration: none;
+	background-position: top;
+}
+
+#message{	
+	background-color:white;
+	border:1px solid blue;
+	width:50%;
+	position:absolute;
+	top:150px;
+	left:250px;
+	text-align:center;
+}
+
+#notLink hover { background:none; }
+#notLink {color:#444444;}
+
+.selectHeight{ height:17px; font-size:11px;}
+
+.formChat{
+		border:1px dashed #999;
+		margin : 5px;
+		padding : 5px;
+		text-align : center;
+}
+
+div.captcha input {
+ border: 2px;
+ background-color :#DDDDDD;
+}
+#captcha img {
+   border: 2px;
+}
+.captcha small {
+   /* see above */
+}
+

@@ -1,0 +1,17 @@
+#!/bin/sh
+files=`find . -type f -print | grep -v lang | grep -v Xinha | grep -v popups | grep -v $1`
+for i in `cat $1 ` ;  do 
+    count=0;
+    for f in $files ; do
+	# echo "checkin $f for $i"
+	grep -q $i $f
+	if [ $? = 0 ] ; then
+	    count=1;
+	    break;
+	fi
+    done
+    if [ $count = 0 ] ; then 
+	echo $i;
+    fi;
+done
+# for i in `cat setup/lang/keys2 ` ;  do count=`find . -exec grep -l $i {} \; | grep -v lang | grep -v Xinha | grep -v popups | wc -l` ; if [ $count = 0 ] ; then echo $i; fi; done

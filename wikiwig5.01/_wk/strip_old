@@ -1,0 +1,10 @@
+#!/bin//sh
+for f in *.php ; do
+    cp $f $f.orig
+    cp $f tes
+    for i in `cat /tmp/obsolete ` ; do
+	sed -e /\'$i\'/d tes > tes1
+	mv tes1 tes 
+    done 
+    mv tes $f
+done
